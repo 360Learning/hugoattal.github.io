@@ -3,8 +3,7 @@ String.prototype.cleanup = function() {
 };
 
 const includeCommand = "/targetfor";
-//const basicsCardsSuffix = "basics";
-const basicsCardsSuffix = "my toto test";
+const basicsCardsSuffix = "basics";
 
 const timelineInformationMapping = {
     "DAY 1": 0,
