@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="element form">
+        <p class="element form">
             <h1>1 - Some pre-requisites</h1>
             <p>Are you preparing a new padawan's arrival? Great, let's help you!</p>
             <ol>
@@ -53,9 +53,13 @@
             <button class="button wide with-margin" :class="{ disabled: ! isValid }" :disabled="! isValid" @click="includeBasics()">
                 1 - Include the "basics" modules into the Learning Path
             </button>
+            <p>2 - Include the modules that are related to the newcomer's function. In the future, this might be automated as well (be patient ^^), but right now it's still a manual action.
+                <br>Don't forget to wait for each of these modules to be included in the Learning Path before applying the next step of magic below :)
+            </p>
             <button class="button wide with-margin" :class="{ disabled: ! isValid }" :disabled="! isValid" @click="organizeLearningPath()">
-                2 - Automatically organize the Learning Path modules that have an indicated timeline
+                3 - Automatically organize the Learning Path modules that have an indicated timeline
             </button>
+            <p>4 - Manually organize the modules that didn't have an indicated timeline.</p>
             <div id="message">{{ message }}</div>
         </div>
         <br>
