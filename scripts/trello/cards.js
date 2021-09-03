@@ -4,6 +4,6 @@ async function postComment(cardId, text, { trelloApiKey, trelloOAuth1 } = {}) {
 async function getCard(cardId, { trelloApiKey, trelloOAuth1 } = {}) {
     return new TrelloClient({ trelloApiKey, trelloOAuth1 }).get(`cards/${cardId}`);
 }
-async function updateCard(cardId, { pos }, { trelloApiKey, trelloOAuth1 } = {}) {
-    return new TrelloClient({ trelloApiKey, trelloOAuth1 }).put(`cards/${cardId}`, { pos });
+async function updateCard(cardId, { name, pos }, { trelloApiKey, trelloOAuth1 } = {}) {
+    return new TrelloClient({ trelloApiKey, trelloOAuth1 }).put(`cards/${cardId}`, { name, pos });
 }

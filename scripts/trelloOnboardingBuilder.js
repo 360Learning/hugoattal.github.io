@@ -96,7 +96,8 @@ var app = new Vue({
 
                     const expectedCardPositionInList = timelineCardPosition[timelineInformationIndex] + 1;
                     incrementPositionsForTimelineInformationAfter(timelineInformationIndex, timelineCardPosition);
-                    await updateCard(card.id, { pos: expectedCardPositionInList }, { trelloApiKey, trelloOAuth1 });
+                    const nameWithoutTimelineInformation = removeTimelineInformation(card.name);
+                    await updateCard(card.id, { name: nameWithoutTimelineInformation, pos: expectedCardPositionInList }, { trelloApiKey, trelloOAuth1 });
                     reorganizedCardsCount++;
                 }
                 return reorganizedCardsCount;
@@ -124,6 +125,10 @@ var app = new Vue({
 
                     timelineCardPosition[index]++;
                 }
+            }
+            function removeTimelineInformation(name) {
+                const timelineInformationRegex = /(.+)\[(DAY|WEEK|MONTH) \d]/;
+                return timelineInformationRegex.exec(name)[1].trim();
             }
         }
     }
